@@ -23,7 +23,7 @@ function outputData(input) {
     .then(function(rows) {
       console.log(`Found ${rows.length} person(s) by name ` + input);
       rows.forEach((row) => {
-        console.log(`- ${row.id}: ${row.first_name} ${row.last_name}, born '${row.birthdate.getFullYear()}-${row.birthdate.getMonth()}-${row.birthdate.getDate()}'`);
+        console.log(`- ${row.id}: ${row.first_name} ${row.last_name}, born '${row.birthdate.getFullYear()}-${row.birthdate.getMonth()+1}-${row.birthdate.getDate()}'`);
       });
     })
     .catch((err) => {

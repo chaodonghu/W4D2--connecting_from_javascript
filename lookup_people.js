@@ -35,9 +35,8 @@ client.connect((err) => {
 });
 
 function outputData(input, results) {
-  console.log(results.rows);
   console.log(`Found ${results.rows.length} person(s) by the name '${input}':`);
   results.rows.forEach((row) => {
-    console.log(`- ${row.id}: ${row.first_name} ${row.last_name}, born '${row.birthdate.getFullYear()}-${row.birthdate.getMonth()}-${row.birthdate.getDate()}'`);
+    console.log(`- ${row.id}: ${row.first_name} ${row.last_name}, born '${row.birthdate.getFullYear()}-${row.birthdate.getMonth()+1}-${row.birthdate.getDate()}'`);
   });
 }
