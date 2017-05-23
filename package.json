@@ -4,6 +4,7 @@
   "description": "",
   "main": "lookup_script.js",
   "dependencies": {
+    "knex": "^0.13.0",
     "moment": "^2.18.1",
     "pg": "^6.2.2"
   },
