@@ -11,6 +11,9 @@ const knex = require("knex")({
   }
 });
 
+let input = process.argv[2];
+input = input.charAt(0).toUpperCase() + input.slice(1);
+
 function outputData(input) {
   console.log("Searching...");
   knex.select()
@@ -22,11 +25,12 @@ function outputData(input) {
       rows.forEach((row) => {
         console.log(`- ${row.id}: ${row.first_name} ${row.last_name}, born '${row.birthdate.getFullYear()}-${row.birthdate.getMonth()}-${row.birthdate.getDate()}'`);
       });
+    })
+    .catch((err) => {
+      if (err) {
+        console.error(err);
+      }
     });
 }
-
-let input = process.argv[2];
-console.log(input);
-input = input.charAt(0).toUpperCase() + input.slice(1);
 
 outputData(input);
